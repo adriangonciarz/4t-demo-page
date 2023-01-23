@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 import json
 import datetime
@@ -98,3 +98,9 @@ def processOrder(request):
 
 def login(request):
     return render(request, 'store/login.html')
+
+def product_view(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    product_name = product.name
+    product_image_url = product.imageURL
+    return render(request, "store/product.html", locals())
