@@ -8,6 +8,7 @@ ADD eCommerce ./eCommerce
 ADD static ./static
 ADD store ./store
 ADD templates ./templates
+ADD db.sqlite3 ./
 ADD requirements.txt ./
 ADD manage.py ./
 
