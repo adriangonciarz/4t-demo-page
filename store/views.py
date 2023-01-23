@@ -100,6 +100,7 @@ def login(request):
     return render(request, 'store/login.html')
 
 def product_view(request, product_id):
-    product = get_object_or_404(models.Product, product_id=product_id)
+    product = get_object_or_404(Product, id=product_id)
     product_name = product.name
-    return render(request, "product.html", locals())
+    product_image_url = product.imageURL
+    return render(request, "store/product.html", locals())
